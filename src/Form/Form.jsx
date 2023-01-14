@@ -1,5 +1,6 @@
-import magnifying from '../assets/magnifying.png';
+
 import React, { useState } from 'react';
+import Result from '../Result/Result';
 
 function Form() {
 
@@ -57,16 +58,11 @@ function Form() {
         <button className="btnEncript" onClick={onClickButtonEncrypt}><h1>Encriptar</h1></button>
         <button className="btnDesencript"  onClick={onClickButtonDecrypt}><h1>Desencriptar</h1></button>
       </div>
-      <div className="desencriptador" style={{display: isShown  ? '' : 'none' }}>
-        <img src={magnifying} className='imgNot' alt="logo" />
-        <div className='txtNotDeco'>
-          <h1> Ningún mensaje fue encontrado.</h1>
-          <h2>Ingresa el texto que desees encriptar o desencriptar.</h2>
-        </div>
-      </div>
-      <div  className="result" style={{display: isShown  ? 'none' : '' }}>
-          <h1>{newTodoValue}</h1>
-      </div>
+      <Result
+        isShown={isShown}
+        newTodoValue={newTodoValue}
+      />
+
     </div>
   )
 }
